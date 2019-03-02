@@ -1,0 +1,54 @@
+entity User {
+    nickname String,
+    status Boolean
+}
+
+entity Tag {
+	name String,
+    status Boolean
+}
+
+
+entity Post {
+	title String,
+	text String,
+	status Boolean,
+    imagen String,
+    timestamp Instant
+}
+
+entity comment {
+    comment String,
+    timestamp Instant,
+    status Boolean
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	User {userPost} to Post {user(nickname)}
+}
+relationship OneToMany {
+	User {userTag} to Tag {user(nickname)}
+}
+
+relationship OneToMany {
+	User {userComment} to Comment {user(nickname)}
+}
+
+relationship OneToMany {
+Post {postComment} to Comment {post(title)}
+}
+
+relationship OneToMany {
+Post {PostTag} to Tag {post(title)}
+}
+
+// Set pagination options
+paginate Post, Comment with infinite-scroll
+paginate User, Tag with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+

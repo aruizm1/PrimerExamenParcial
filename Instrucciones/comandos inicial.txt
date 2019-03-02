@@ -1,0 +1,5 @@
+git remote add origin https://github.com/aruizm1/PrimerExamenParcial.git
+git push -u origin master
+
+
+https://start.spring.io/
