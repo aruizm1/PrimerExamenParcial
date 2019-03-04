@@ -1,0 +1,27 @@
+<app-nav></app-nav>
+<div class="grid-block" style="background-image: url('../assets/fondo-cabecera.jpg'); width: 100%; ">
+    <!-- Page Content -->
+    <br>
+    <br>
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-12">
+
+                <h1 class="my-4" style="text-align:center; color:rgb(247, 242, 242);">Articulos
+                    <small>Exitosos!!</small>
+                </h1>
+
+                <!-- Blog Post-->
+                <app-post *ngFor="let postPadre of posts" [post]=postPadre></app-post>
+
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+</div>

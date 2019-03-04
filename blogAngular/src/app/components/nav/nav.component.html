@@ -1,0 +1,30 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="dashboard">Mi Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Opciones</label>
+                        </div>
+                        <select class="custom-select" id="inputGroupSelect01">
+                                        <option selected value="1">Mis publicaciones</option>
+                                          <option  value = "2">Mis preferencias</option>
+                                          <option  value="3">Sugeridas</option>
+                                        </select>
+                    </div>
+
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-dark" (click)="logout()">Cerrar Sesion</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

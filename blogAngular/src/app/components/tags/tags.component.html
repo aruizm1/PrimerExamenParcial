@@ -1,0 +1,33 @@
+<!-- Categories Widget -->
+<div class="">
+    <div class="card my-4">
+        <h5 class="card-header">Preferencias</h5>
+        <div class="card-body">
+
+            <div class="input-group mb-3">
+                <div class="col-lg-6">
+                    <ul class="list-unstyled mb-0" *ngFor="let tag of tag; let i=index">
+
+                        <li>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="removeTag(i)">X</button>
+                                </div>
+                                <input type="text" class="form-control" value={{tag.name}} aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon1" (click)="addTag()">Agregar</button>
+                </div>
+                <input type="text" class="form-control" placeholder="Nueva categoria" preferencia aria-label="Example text with button addon" aria-describedby="button-addon1" [(ngModel)]="value">
+            </div>
+
+        </div>
+    </div>
+</div>

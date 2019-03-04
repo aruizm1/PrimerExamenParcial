@@ -1,0 +1,30 @@
+<div class="container">
+
+
+    <!-- Blog Post -->
+    <div class="card mb-12">
+        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+        <div class="card-body">
+            <h2 class="card-title">{{post.title}}</h2>
+            <p class="card-text">{{post.text}}</p>
+            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3>Comentarios</h3>
+                    </div>
+                    <!-- /col-sm-12 -->
+                </div>
+
+                <app-comments *ngFor="let commentPadre of post.comments" [comment]="commentPadre"></app-comments>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            publicado el {{post.timestamp}} por
+            <a>{{post.user.nickname}}</a>
+
+        </div>
+    </div>
+
+</div>
+<br>
