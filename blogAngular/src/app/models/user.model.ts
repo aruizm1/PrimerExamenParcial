@@ -4,6 +4,6 @@ export class User {
         public id: number,
         public nickname: string,
         public status: number,
-        public tag: Tag[]
+        public tags: Tag[]
         ) { }
 }

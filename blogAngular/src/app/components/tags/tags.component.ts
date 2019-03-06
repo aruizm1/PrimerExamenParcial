@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Tag } from '../../models/tag.model';
 import {Router} from '@angular/router';
 import { TagsService } from '../../services/tags.service';
+import { LocalStorage } from '@ngx-pwa/local-storage';
 
 
 @Component({
@@ -17,22 +18,29 @@ tagTemp: Tag;
 temp1: Tag[];
 temp: string;
 exist: boolean = true;
+empty: boolean = true;
 
   constructor(
     private router: Router,
-    private tagsService: TagsService) { }
+    private tagsService: TagsService,
+    protected localStorage: LocalStorage) { }
 
   ngOnInit() {
   }
 
   removeTag(index: number){
     this.tag.splice(index, 1);
+    this.localStorage.setItem('tagsUser', this.tag).subscribe(() => {});
+
   }
 
   addTag() {
+    if(this.tag !== null){
     this.temp = this.stdText(this.value);
 
     this.tagsService.getTags().subscribe( data => {
+
+
 
       if(data !== null){
 
@@ -57,7 +65,9 @@ exist: boolean = true;
         this.value = '';
         }
       }
+      this.localStorage.setItem('tagsUser', data).subscribe(() => {});
     });
+  }
   }
 
 

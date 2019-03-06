@@ -37,7 +37,7 @@ public tags: Tag[];
 
       if (user.nickname.localeCompare(this.inputUser) === 0) {
         this.localStorage.setItem('user', user).subscribe(() => {});
-        this.localStorage.setItem('tags', user.tag).subscribe(() => {});
+        this.localStorage.setItem('tags', user.tags).subscribe(() => {});
       }
     }
 
