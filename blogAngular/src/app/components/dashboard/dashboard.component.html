@@ -1,4 +1,4 @@
-<app-nav></app-nav>
+<app-nav (selectOption)="Onfilter($event)"></app-nav>
 <div class="grid-block" style="background-image: url('../assets/fondo-cabecera.jpg'); width: 100%; ">
     <!-- Page Content -->
     <br>
@@ -15,8 +15,9 @@
                 </h1>
 
                 <!-- Blog Post-->
-                <app-post *ngFor="let postPadre of posts" [post]=postPadre></app-post>
-
+                <div *ngIf="existPost">
+                    <app-post *ngFor="let postPadre of posts" [post]=postPadre></app-post>
+                </div>
 
             </div>
 

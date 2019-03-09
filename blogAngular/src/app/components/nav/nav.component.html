@@ -13,7 +13,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Opciones</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="index" (change)="capture()">
                                         <option selected value="1">Mis publicaciones</option>
                                           <option  value = "2">Mis preferencias</option>
                                           <option  value="3">Sugeridas</option>

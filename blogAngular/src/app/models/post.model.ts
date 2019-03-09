@@ -11,9 +11,9 @@ export class Post{
         public  imagen: string,
         public status: boolean,
         public timestamp: Date,
-        public  like: Enjoy,
+        public  enjoys: Enjoy,
         public user: User,
         public comments: Comment[],
-        public tag: Tag[]
+        public tagsPost: Tag[]
     ){}
 }

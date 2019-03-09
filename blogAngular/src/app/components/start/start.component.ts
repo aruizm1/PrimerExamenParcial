@@ -16,6 +16,7 @@ export class StartComponent implements OnInit {
 public users: User[];
 public inputUser: string;
 public tags: Tag[];
+public reg: boolean = false;
 
   constructor(
     private userService: UserService,
@@ -37,16 +38,16 @@ public tags: Tag[];
 
       if (user.nickname.localeCompare(this.inputUser) === 0) {
         this.localStorage.setItem('user', user).subscribe(() => {});
-        this.localStorage.setItem('tags', user.tags).subscribe(() => {});
+        this.reg = true;
+          this.router.navigate(['dashboard']);
       }
+
     }
 
-    this.localStorage.getItem<User>('user').subscribe((ver) => {
-      if ( ver != null) {
-        this.router.navigate(['dashboard']);
-      } else {
-        this.router.navigate(['']);
-      }
-    });
+    if(!this.reg){
+      this.router.navigate(['register']);
+    }
+
+
   }
 }
